@@ -22,7 +22,7 @@ const Marketplace = () => {
         <Banner />
 
         {/* NFt Header */}
-        <div className="mb-4 mt-5 flex flex-col justify-between px-4 md:flex-row md:items-center">
+        {/* <div className="mb-4 mt-5 flex flex-col justify-between px-4 md:flex-row md:items-center">
           <h4 className="ml-1 text-2xl font-bold text-navy-700 dark:text-white">
             Trending NFTs
           </h4>
@@ -60,10 +60,10 @@ const Marketplace = () => {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
 
         {/* NFTs trending card */}
-        <div className="z-20 grid grid-cols-1 gap-5 md:grid-cols-3">
+        {/* <div className="z-20 grid grid-cols-1 gap-5 md:grid-cols-3">
           <NftCard
             bidders={[avatar1, avatar2, avatar3]}
             title="Abstract Colors"
@@ -85,17 +85,17 @@ const Marketplace = () => {
             price="2.91"
             image={NFt4}
           />
-        </div>
+        </div> */}
 
         {/* Recenlty Added setion */}
-        <div className="mb-5 mt-5 flex items-center justify-between px-[26px]">
+        {/* <div className="mb-5 mt-5 flex items-center justify-between px-[26px]">
           <h4 className="text-2xl font-bold text-navy-700 dark:text-white">
             Recently Added
           </h4>
-        </div>
+        </div> */}
 
         {/* Recently Add NFTs */}
-        <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+        {/* <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           <NftCard
             bidders={[avatar1, avatar2, avatar3]}
             title="Abstract Colors"
@@ -117,7 +117,7 @@ const Marketplace = () => {
             price="2.91"
             image={NFt6}
           />
-        </div>
+        </div> */}
       </div>
 
       {/* right side section */}
