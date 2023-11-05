@@ -1,3 +1,5 @@
+import json
+
 import pandas as pd
 import tensorflow as tf
 import keras
@@ -7,6 +9,7 @@ import numpy as np
 from keras.models import load_model
 from datetime import datetime, timedelta
 import yfinance as yf
+from flask_jsonpify import jsonpify
 # instantiate flask
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
@@ -15,6 +18,38 @@ CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 @app.route('/')
 def home():
     return {"message": "Hello from backend"}
+
+
+@app.route('/find', methods=['GET'])
+def find():
+    try:
+        df = pd.read_csv('reliance_stock_history.csv')
+        # df_list = df.values.tolist()
+        # df_list = list(df.values.flatten())
+        # JSONP_data = jsonpify(df_list)
+
+        # return JSONP_data
+        json_objects = []
+
+        # Loop through the DataFrame rows and create a JSON object for each entry
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+        data_dict = dict()
+        for col in df.columns:
+            data_dict[col] = df[col].values.tolist()
+        return jsonify(data_dict)
+    except OSError:
+        print('No file')
+
+
+@app.route('/lstm', methods=['GET'])
+def lstm():
+    with open('candlestick.json', 'r') as json_file:
+        data = json.load(json_file)
+        return jsonify(data)
+
 
 
 @app.route("/predict", methods=['POST', 'GET'])
@@ -37,9 +72,9 @@ def predict():
     dataset = data.values
     scaled_data = scaler.fit_transform(dataset)
     X_test = []
-    Y_test = scaled_data
-
-    for i in range(60, len(scaled_data)):
+    Y_test = df['Close']
+    print(scaled_data.shape)
+    for i in range(0, len(scaled_data)):
         X_test.append(scaled_data[i - 60:i, 0])
 
     # Convert the data to a numpy array
