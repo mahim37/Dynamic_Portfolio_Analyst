@@ -34,7 +34,7 @@ function Notification() {
           </label>
         </div>
 
-        <div className="mt-4 flex items-center gap-3">
+        {/* <div className="mt-4 flex items-center gap-3">
           <Switch id="switch3" />
           <label
             for="checkbox3"
@@ -42,9 +42,9 @@ function Notification() {
           >
             Rating reminders notifications
           </label>
-        </div>
+        </div> */}
 
-        <div className="mt-4 flex items-center gap-3">
+        {/* <div className="mt-4 flex items-center gap-3">
           <Switch id="switch4" />
           <label
             for="checkbox4"
@@ -52,7 +52,7 @@ function Notification() {
           >
             Meetups near you notifications
           </label>
-        </div>
+        </div> */}
 
         <div className="mt-4 flex items-center gap-3">
           <Switch id="switch5" />
@@ -73,7 +73,7 @@ function Notification() {
             New launches and projects
           </label>
         </div>
-        <div className="mt-4 flex items-center gap-3">
+        {/* <div className="mt-4 flex items-center gap-3">
           <Switch id="switch7" />
           <label
             for="checkbox7"
@@ -81,7 +81,7 @@ function Notification() {
           >
             Monthly product changes
           </label>
-        </div>
+        </div> */}
         <div className="mt-4 flex items-center gap-3">
           <Switch id="switch8" />
           <label
@@ -91,7 +91,7 @@ function Notification() {
             Subscribe to newsletter
           </label>
         </div>
-        <div className="mt-4 flex items-center gap-3">
+        {/* <div className="mt-4 flex items-center gap-3">
           <Switch id="switch8" />
           <label
             for="checkbox8"
@@ -99,7 +99,7 @@ function Notification() {
           >
             Email me when someone follows me
           </label>
-        </div>
+        </div> */}
       </div>
     </Card>
   );

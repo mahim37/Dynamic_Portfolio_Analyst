@@ -1,4 +1,4 @@
-import nft1 from "assets/img/nfts/NftBanner1.png";
+import nft1 from "assets/img/nfts/Backgroundimg.png";
 
 const Banner1 = () => {
   return (
@@ -7,12 +7,11 @@ const Banner1 = () => {
       style={{ backgroundImage: `url(${nft1})` }}
     >
       <div className="w-full">
-        <h4 className="mb-[14px] max-w-full text-xl font-bold text-white md:w-[64%] md:text-3xl md:leading-[42px] lg:w-[46%] xl:w-[85%] 2xl:w-[75%] 3xl:w-[52%]">
+        <h4 className="mb-[10px] max-w-full text-xl font-bold text-white md:w-[64%] md:text-3xl md:leading-[42px] lg:w-[46%] xl:w-[85%] 2xl:w-[75%] 3xl:w-[52%]">
           Dynamic Portfolios, Data driven predictions.
         </h4>
-        <p className="mb-[40px] max-w-full text-base font-medium text-[#E3DAFF] md:w-[64%] lg:w-[40%] xl:w-[72%] 2xl:w-[60%] 3xl:w-[45%]">
-          Empower portfolios with live sentiment analysis for optimized 
-          decision-making and lucrative stock investments!
+        <p className="mb-[30px] max-w-full text-xl font-medium text-[#E3DAFF] md:w-[64%] lg:w-[40%] xl:w-[72%] 2xl:w-[60%] 3xl:w-[45%]">
+          Your Personal Analyst: Insights at Your Own Fingertips!
         </p>
 {/* 
         <div className="mt-[36px] flex items-center justify-between gap-4 sm:justify-start 2xl:gap-10">

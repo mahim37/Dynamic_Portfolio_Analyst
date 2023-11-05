@@ -24,13 +24,14 @@ const Sidebar = ({ open, onClose }) => {
         Dynamic Portfolio <br/>
         <span class="font-medium ">Analyst</span>
         </div> */}
-        <div className="mt-0 ml-0 h-6 font-poppins text-28 font-bold uppercase text-navy-700 dark:text-white">
+        <div className="mt-0 ml-0 h-6 font-poppins text-36 font-bold uppercase text-navy-700 dark:text-white">
           <div className="text-center">
-            <span>Dynamic Portfolio</span>
+            <span style={{ fontSize: '20px' }}>Dynamic Portfolio</span>
             <br />
-            <span className="font-medium">Analyst</span>
+            <span className="font-medium" style={{ fontSize: '22px' }}>Analyst</span>
           </div>
         </div>
+
 
 
       </div>
