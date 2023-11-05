@@ -73,14 +73,10 @@ function TopCreatorTable(props) {
                       data = (
                         <div className="flex items-center gap-2">
                           <div className="h-[30px] w-[30px] rounded-full">
-                            <img
-                              src={cell.value[1]}
-                              className="h-full w-full rounded-full"
-                              alt=""
-                            />
+                            
                           </div>
                           <p className="text-sm font-medium text-navy-700 dark:text-white">
-                            {cell.value[0]}
+                            {cell.value}
                           </p>
                         </div>
                       );
