@@ -20,28 +20,29 @@ import {
 } from "react-icons/md";
 
 const routes = [
-  {
-    name: "Stocks",
-    layout: "/admin",
-    path: "default",
-    icon: <MdHome className="h-6 w-6" />,
-    component: <MainDashboard />,
-  },
+  
   {
     name: "Dashboard",
     layout: "/admin",
     path: "nft-marketplace",
-    icon: <MdOutlineShoppingCart className="h-6 w-6" />,
+    icon: <MdHome className="h-6 w-6" />,
     component: <NFTMarketplace />,
     secondary: true,
   },
+  {
+    name: "HDFC",
+    layout: "/admin",
+    path: "default",
+    icon: <MdHome className="h-6 w-6" />,
+    component: <MainDashboard />,
+  }/* ,
   {
     name: "Stocks",
     layout: "/admin",
     icon: <MdBarChart className="h-6 w-6" />,
     path: "data-tables",
     component: <DataTables />,
-  },
+  } */,
   {
     name: "Profile",
     layout: "/admin",
