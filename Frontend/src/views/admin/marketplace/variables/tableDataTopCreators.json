@@ -1,9 +1,37 @@
 [
   {
-    "name": "Reliance", 
-    "symbol": "9821",
-    "quantity": 30,
-    "value":100
+    "name": [
+      "Reliance"    ],
+    "symbol": "RELI",
+    "quantity": 100,
+    "value":100 
+  },
+  {
+    "name": [
+      "HDFC"
+    ],
+    "symbol": "HBBK",
+    "quantity": 100
+  },
+  {
+    "name": [
+      "Axis"
+    ],
+    "symbol": "AXBK",
+    "quantity": 100
+  },
+  {
+    "name": [
+      "ICICI"
+    ],
+    "symbol": "ICB",
+    "quantity": 100
+  },
+  {
+    "name": [
+      "Kotak"
+    ],
+    "symbol": "KTKM",
+    "quantity": 100
   }
- 
 ]
