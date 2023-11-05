@@ -165,7 +165,7 @@ const Dashboard = () => {
           },
           yaxis: {
             title: 'Price',
-            tickprefix: '$', // Add a dollar sign prefix to tick values
+            tickprefix: '₹', // Add a dollar sign prefix to tick values
             // fixedrange: true, // Disable zooming on the y-axis
           },
           dragmode: 'pan', // Enable panning
