@@ -86,7 +86,7 @@ const CheckTable = (props) => {
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "CLOSE") {
+                    } else if (cell.column.Header === "HEADLINES") {
                       data = (
                         <div className="flex items-center">
                           <p className="text-sm font-bold text-navy-700 dark:text-white">
@@ -94,21 +94,20 @@ const CheckTable = (props) => {
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "VOLUME") {
+                    } else if (cell.column.Header === "DESCRIPTION") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
                           {" "}
                           {cell.value}{" "}
                         </p>
                       );
+                    } else if (cell.column.Header === "SENTIMENT") {
+                      data = (
+                        <p className="text-sm font-bold text-navy-700 dark:text-white">
+                          {cell.value}
+                        </p>
+                      );
                     }
-                    // } else if (cell.column.Header === "DATE") {
-                    //   data = (
-                    //     <p className="text-sm font-bold text-navy-700 dark:text-white">
-                    //       {cell.value}
-                    //     </p>
-                    //   );
-                    // }
                     return (
                       <td
                         {...cell.getCellProps()}

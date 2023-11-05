@@ -60,7 +60,7 @@ def lstm():
             entry_json = row.to_dict()
             json_objects.append(entry_json)
         return jsonify(json_objects)
-    
+
     except OSError:
         print('No file')
 

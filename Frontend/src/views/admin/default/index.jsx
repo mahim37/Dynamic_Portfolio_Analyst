@@ -24,7 +24,7 @@ import { tab } from "@testing-library/user-event/dist/tab";
 const Dashboard = () => {
   const [tableData, setTableData] = useState([]);
   const [loading, setLoading] = useState(true);
-  const [chartData, setChartData] = useState([]);
+  const [newsData, setNewsData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -69,7 +69,7 @@ const Dashboard = () => {
           // const fileName = '../variables/tableData.json';
           const jsonData = await response.json();
           console.log(jsonData);
-          setChartData(jsonData);
+          setNewsData(jsonData);
      
         } else {
           console.error('Failed to fetch data');
@@ -137,7 +137,7 @@ const Dashboard = () => {
         <div>
           <CheckTable
             columnsData={columnsDataCheck}
-            tableData= {tableData}
+            tableData= {newsData}
           />
         </div>
 

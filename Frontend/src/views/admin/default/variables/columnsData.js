@@ -23,12 +23,20 @@ export const columnsDataCheck = [
     accessor: "Date",
   },
   {
-    Header: "CLOSE",
-    accessor: "Close",
+    Header: "HEADLINES",
+    accessor: "Headlines",
   },
   {
-    Header: "VOLUME",
-    accessor: "Volume",
+    Header: "DESCRIPTION",
+    accessor: "Description",
+  },
+  {
+    Header: "SENTIMENT",
+    accessor: "labels",
+  },
+  {
+    Header: "SCORES",
+    accessor: "scores",
   },
 //   {
 //     Header: "DATE",
