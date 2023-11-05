@@ -1,37 +1,30 @@
 [
   {
-    "name": [
-      "Reliance"    ],
+    "name": "Reliance",
     "symbol": "RELI",
-    "quantity": 100,
-    "value":100 
+    "quantity": 80,
+    "link":"Reliance"
+    
   },
   {
-    "name": [
-      "HDFC"
-    ],
+    "name": "HDFC",
     "symbol": "HBBK",
-    "quantity": 100
+    "quantity": 50
   },
   {
-    "name": [
-      "Axis"
-    ],
+    "name":"Axis",
     "symbol": "AXBK",
-    "quantity": 100
+    "quantity": 70
+    
   },
   {
-    "name": [
-      "ICICI"
-    ],
+    "name":"ICICI",
     "symbol": "ICB",
-    "quantity": 100
+    "quantity": 60
   },
   {
-    "name": [
-      "Kotak"
-    ],
+    "name":"Kotak",
     "symbol": "KTKM",
-    "quantity": 100
+    "quantity": 78
   }
 ]

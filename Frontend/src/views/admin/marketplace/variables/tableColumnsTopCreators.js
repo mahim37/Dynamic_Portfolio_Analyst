@@ -12,7 +12,7 @@ export const tableColumnsTopCreators = [
     accessor: "quantity",
   },
   {
-    Header: "VALUE",
-    accessor: "value",
-  },
+    Header: "LINK",
+    accessor: "link",
+  }
 ];

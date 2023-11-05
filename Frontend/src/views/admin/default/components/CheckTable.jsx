@@ -2,6 +2,7 @@ import React, { useMemo } from "react";
 import CardMenu from "components/card/CardMenu";
 import Checkbox from "components/checkbox";
 import Card from "components/card";
+import Progress from "components/progress";
 import {
   useGlobalFilter,
   usePagination,
@@ -111,7 +112,10 @@ const CheckTable = (props) => {
                     else if (cell.column.Header === "SCORES") {
                       data = (
                         <p className="text-sm font-bold text-navy-700 dark:text-white">
-                          {cell.value}
+                          
+                          <Progress width="w-16" value={cell.value} />
+                          
+                        
                         </p>
                       );
                     }
