@@ -107,6 +107,75 @@ def hdfc():
         print('No predictions')
 
 
+@app.route("/predict/reliance", methods=['GET'])
+def predict_reliance():
+    try:
+        df = pd.read_csv('predicited_data/reliance_lstm.csv')
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+
+    except OSError:
+        print('No predictions')
+
+
+@app.route("/predict/axis", methods=['GET'])
+def predict_axis():
+    try:
+        df = pd.read_csv('predicited_data/axis_lstm.csv')
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+
+    except OSError:
+        print('No predictions')
+
+
+@app.route("/predict/hdfc", methods=['GET'])
+def predict_hdfc():
+    try:
+        df = pd.read_csv('predicited_data/hdfc_lstm.csv')
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+
+    except OSError:
+        print('No predictions')
+
+
+@app.route("/predict/icici", methods=['GET'])
+def predict_icici():
+    try:
+        df = pd.read_csv('predicited_data/icici_lstm.csv')
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+
+    except OSError:
+        print('No predictions')
+
+
+@app.route("/predict/kotak", methods=['GET'])
+def predict_kotak():
+    try:
+        df = pd.read_csv('predicited_data/kotak_lstm.csv')
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+
+    except OSError:
+        print('No predictions')
+
 
 @app.route("/predict", methods=['POST', 'GET'])
 def predict():

@@ -25,7 +25,7 @@ const Reliance = () => {
   const [tableData, setTableData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [newsData, setNewsData] = useState([]);
-
+  const [predictData, setPredictData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -71,6 +71,35 @@ const Reliance = () => {
           console.log(jsonData);
           setNewsData(jsonData);
      
+        } else {
+          console.error('Failed to fetch data');
+        }
+  
+        setLoading(false);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+        setLoading(false);
+      }
+    };
+    
+    fetchData();
+  }, []);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch('http://localhost:5000/predict/reliance', {
+          method: 'GET',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        });
+  
+        if (response.ok) {
+          // const fileName = '../variables/tableData.json';
+          const jsonData = await response.json();
+          // console.log((jsonData));
+          setPredictData((jsonData));
         } else {
           console.error('Failed to fetch data');
         }
@@ -204,7 +233,37 @@ const Reliance = () => {
       />
 
         </div>
+
         </div>
+        <div>
+        <Plot data={[{
+            type: 'scatter',
+            mode:'lines',
+            x: predictData.map((dataPoint) => dataPoint.Date),
+            y: predictData.map((dataPoint) => dataPoint.Open),
+            // open: tableData.map((dataPoint) => dataPoint.Open),
+            // high: tableData.map((dataPoint) => dataPoint.High),
+            // low: tableData.map((dataPoint) => dataPoint.Low),
+            // close: tableData.map((dataPoint) => dataPoint.Close),
+          },
+        ]}
+        layout={{
+          title: 'Price Chart',
+          xaxis: {
+            title: 'Date',
+            // fixedrange: 'true's
+            // type: 'category', // Display dates as categories
+          },
+          yaxis: {
+            title: 'Price',
+            tickprefix: '₹', // Add a dollar sign prefix to tick values
+            // fixedrange: true, // Disable zooming on the y-axis
+          },
+          // dragmode: 'pan', // Enable panning
+        }}
+      config={{ displayModeBar: false }} // Hide the display mode bar
+    />
+    </div>
         {/* Traffic chart & Pie Chart */}
 
         <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
