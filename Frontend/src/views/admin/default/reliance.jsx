@@ -266,22 +266,22 @@ const Reliance = () => {
     </div>
         {/* Traffic chart & Pie Chart */}
 
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
+        {/* <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
           <DailyTraffic />
           <PieChartCard />
-        </div>
+        </div> */}
 
         {/* Complex Table , Task & Calendar */}
-
+{/* 
         <ComplexTable
           columnsData={columnsDataComplex}
           tableData={tableDataComplex}
-        />
+        /> */}
 
         {/* Task chart & Calendar */}
 
         <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          <TaskCard />
+          {/* <TaskCard /> */}
           <div className="grid grid-cols-1 rounded-[20px]">
             <MiniCalendar />
           </div>
