@@ -1,11 +1,12 @@
 [
   {
     "name": [
-      "@maddison_c21",
+      "Reliance",
       "https://images.unsplash.com/photo-1506863530036-1efeddceb993?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2244&q=80"
     ],
-    "artworks": "9821",
-    "rating": 30
+    "symbol": "9821",
+    "quantity": 30,
+    "value":100
   },
   {
     "name": [

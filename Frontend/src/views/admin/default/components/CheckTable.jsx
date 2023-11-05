@@ -108,6 +108,13 @@ const CheckTable = (props) => {
                         </p>
                       );
                     }
+                    else if (cell.column.Header === "SCORES") {
+                      data = (
+                        <p className="text-sm font-bold text-navy-700 dark:text-white">
+                          {cell.value}
+                        </p>
+                      );
+                    }
                     return (
                       <td
                         {...cell.getCellProps()}

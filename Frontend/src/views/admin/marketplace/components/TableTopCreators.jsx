@@ -69,7 +69,7 @@ function TopCreatorTable(props) {
                 <tr {...row.getRowProps()} key={index}>
                   {row.cells.map((cell, index) => {
                     let data = "";
-                    if (cell.column.Header === "Name") {
+                    if (cell.column.Header === "SYMBOL") {
                       data = (
                         <div className="flex items-center gap-2">
                           <div className="h-[30px] w-[30px] rounded-full">
@@ -84,19 +84,27 @@ function TopCreatorTable(props) {
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "Artworks") {
+                    } else if (cell.column.Header === "NAME") {
                       data = (
                         <p className="text-md font-medium text-gray-600 dark:text-white">
                           {cell.value}
                         </p>
                       );
-                    } else if (cell.column.Header === "Rating") {
+                    } else if (cell.column.Header === "QUANTITY") {
                       data = (
                         <div class="mx-2 flex font-bold">
                           <Progress width="w-16" value={cell.value} />
                         </div>
                       );
                     }
+                    else if (cell.column.Header === "PRICE") {
+                      data = (
+                        <div class="mx-2 flex font-bold">
+                          <Progress width="w-16" value={cell.value} />
+                        </div>
+                      );
+                    }
+                    
                     return (
                       <td
                         className="py-3 text-sm"
