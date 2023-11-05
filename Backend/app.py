@@ -46,9 +46,23 @@ def find():
 
 @app.route('/lstm', methods=['GET'])
 def lstm():
-    with open('candlestick.json', 'r') as json_file:
-        data = json.load(json_file)
-        return jsonify(data)
+    try:
+        df = pd.read_csv('reliance_sentiment.csv')
+        # df_list = df.values.tolist()
+        # df_list = list(df.values.flatten())
+        # JSONP_data = jsonpify(df_list)
+
+        # return JSONP_data
+        json_objects = []
+
+        # Loop through the DataFrame rows and create a JSON object for each entry
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+    
+    except OSError:
+        print('No file')
 
 
 
