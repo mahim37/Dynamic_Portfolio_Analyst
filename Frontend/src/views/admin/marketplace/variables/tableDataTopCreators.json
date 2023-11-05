@@ -3,28 +3,35 @@
     "name": "Reliance",
     "symbol": "RELI",
     "quantity": 80,
-    "link":"Reliance"
+    "link":"/stocks/reliance"
     
   },
   {
     "name": "HDFC",
     "symbol": "HBBK",
-    "quantity": 50
+    "quantity": 50,
+    "link":"/stocks/hdfc"
+
   },
   {
     "name":"Axis",
     "symbol": "AXBK",
-    "quantity": 70
+    "quantity": 70,
+    "link":"/stocks/axis"
+
     
   },
   {
     "name":"ICICI",
     "symbol": "ICB",
-    "quantity": 60
+    "quantity": 60,
+    "link":"/stocks/icici"
+
   },
   {
     "name":"Kotak",
     "symbol": "KTKM",
-    "quantity": 78
+    "quantity": 78,
+    "link":"/stocks/kotak"
   }
 ]

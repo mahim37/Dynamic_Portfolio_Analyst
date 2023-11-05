@@ -1,17 +1,12 @@
-import Chart from "react-apexcharts";
+import React from 'react';
+import Plot from 'react-plotly.js';
 
-const LineChart = (props) => {
-  const { series, options } = props;
-
+const CandlestickChart = ({ chartData }) => {
   return (
-    <Chart
-      options={options}
-      type="line"
-      width="100%"
-      height="100%"
-      series={series}
-    />
+    <div>
+      <Plot data={chartData} />
+    </div>
   );
 };
 
-export default LineChart;
+export default CandlestickChart;

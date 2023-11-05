@@ -123,14 +123,14 @@ const Marketplace = () => {
       {/* right side section */}
       
         <div className="col-span-1 h-full w-full rounded-xl 2xl:col-span-3">
-        <a href="/admin/default/">
+        
       <TopCreatorTable
         extra="mb-5"
         tableData={tableDataTopCreators}
         columnsData={tableColumnsTopCreators}
        
       />
-       </a>
+      
       {/* <HistoryCard /> */}
     </div>
   

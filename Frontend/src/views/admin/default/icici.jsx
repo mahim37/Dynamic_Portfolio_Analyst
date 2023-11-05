@@ -21,7 +21,7 @@ import { tab } from "@testing-library/user-event/dist/tab";
 
 
 
-const Dashboard = () => {
+const Icici = () => {
   const [tableData, setTableData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [newsData, setNewsData] = useState([]);
@@ -58,7 +58,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/sentiment/hdfc', {
+        const response = await fetch('http://localhost:5000/sentiment/icici', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -119,7 +119,12 @@ const Dashboard = () => {
         />
         <Widget
           icon={<IoMdHome className="h-6 w-6" />}
-          title={"Total Projects"}
+          title={"Total Projects    <TopCreatorTable
+            extra="mb-5"
+            tableData={tableDataTopCreators}
+            columnsData={tableColumnsTopCreators}
+          
+          />"}
           subtitle={"$2433"}
         /> */}
       </div>
@@ -127,37 +132,8 @@ const Dashboard = () => {
       {/* Charts */}
 
       <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
-        {/* <TotalSpent /> */}
-        <Plot data={[{
-            type: 'scatter',
-            mode:'lines',
-            x: tableData.map((dataPoint) => dataPoint.Date),
-            y: tableData.map((dataPoint) => dataPoint.Open)
-            // open: tableData.map((dataPoint) => dataPoint.Open),
-            // high: tableData.map((dataPoint) => dataPoint.High),
-            // low: tableData.map((dataPoint) => dataPoint.Low),
-            // close: tableData.map((dataPoint) => dataPoint.Close),
-            // increasing: { line: { color: 'green' } },
-            // decreasing: { line: { color: 'red' } },
-          },
-        ]}
-        layout={{
-          title: 'Candlestick Chart',
-          xaxis: {
-            title: 'Date',
-            // fixedrange: 'true's
-            // type: 'category', // Display dates as categories
-          },
-          yaxis: {
-            title: 'Price',
-            tickprefix: '₹', // Add a dollar sign prefix to tick values
-            // fixedrange: true, // Disable zooming on the y-axis
-          },
-          // dragmode: 'pan', // Enable panning
-        }}
-      // config={{ displayModeBar: false }} // Hide the display mode bar
-    />
-        {/* <WeeklyRevenue /> */}
+        <TotalSpent />
+        <WeeklyRevenue />
       </div>
 
       {/* Tables & Charts */}
@@ -194,7 +170,7 @@ const Dashboard = () => {
           },
           yaxis: {
             title: 'Price',
-            tickprefix: '₹', // Add a dollar sign prefix to tick values
+            tickprefix: '$', // Add a dollar sign prefix to tick values
             // fixedrange: true, // Disable zooming on the y-axis
           },
           dragmode: 'pan', // Enable panning
@@ -231,4 +207,4 @@ const Dashboard = () => {
   );
 };
 
-export default Dashboard;
+export default Icici;

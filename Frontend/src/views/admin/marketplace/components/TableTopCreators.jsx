@@ -1,6 +1,7 @@
 import Card from "components/card";
 import Progress from "components/progress";
 import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
 import {
   useGlobalFilter,
   usePagination,
@@ -96,7 +97,9 @@ function TopCreatorTable(props) {
                     else if (cell.column.Header === "LINK") {
                       data = (
                         <div className="mx-2 flex font-bold">
-                          <button className="px-3 py-1 bg-blue-500 text-white rounded-md">Click</button>
+                          <Link to={cell.value}>
+                            <button className="px-3 py-1 bg-blue-500 text-white rounded-md">Analysis</button>
+                          </Link>
                         </div>
                       );
                     }
