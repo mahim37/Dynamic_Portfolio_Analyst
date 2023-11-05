@@ -58,7 +58,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/lstm', {
+        const response = await fetch('http://localhost:5000/sentiment/hdfc', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

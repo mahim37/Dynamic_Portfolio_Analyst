@@ -24,14 +24,7 @@ def home():
 def find():
     try:
         df = pd.read_csv('reliance_stock_history.csv')
-        # df_list = df.values.tolist()
-        # df_list = list(df.values.flatten())
-        # JSONP_data = jsonpify(df_list)
-
-        # return JSONP_data
         json_objects = []
-
-        # Loop through the DataFrame rows and create a JSON object for each entry
         for index, row in df.iterrows():
             entry_json = row.to_dict()
             json_objects.append(entry_json)
@@ -44,25 +37,74 @@ def find():
         print('No file')
 
 
-@app.route('/lstm', methods=['GET'])
-def lstm():
+@app.route('/sentiment/reliance', methods=['GET'])
+def reliance():
     try:
         df = pd.read_csv('reliance_sentiment.csv')
-        # df_list = df.values.tolist()
-        # df_list = list(df.values.flatten())
-        # JSONP_data = jsonpify(df_list)
-
-        # return JSONP_data
         json_objects = []
-
-        # Loop through the DataFrame rows and create a JSON object for each entry
         for index, row in df.iterrows():
             entry_json = row.to_dict()
             json_objects.append(entry_json)
         return jsonify(json_objects)
 
     except OSError:
-        print('No file')
+        print('No predictions')
+
+
+@app.route('/sentiment/kotak', methods=['GET'])
+def kotak():
+    try:
+        df = pd.read_csv('sentiment_outputs/kotak_sentiment.csv')
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+
+    except OSError:
+        print('No predictions')
+
+
+@app.route('/sentiment/icici', methods=['GET'])
+def icici():
+    try:
+        df = pd.read_csv('sentiment_outputs/icici_sentiment.csv')
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+
+    except OSError:
+        print('No predictions')
+
+
+@app.route('/sentiment/axis', methods=['GET'])
+def axis():
+    try:
+        df = pd.read_csv('sentiment_outputs/axis_sentiment.csv')
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+
+    except OSError:
+        print('No predictions')
+
+
+@app.route('/sentiment/hdfc', methods=['GET'])
+def hdfc():
+    try:
+        df = pd.read_csv('sentiment_outputs/hdfc_sentiment.csv')
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+
+    except OSError:
+        print('No predictions')
 
 
 

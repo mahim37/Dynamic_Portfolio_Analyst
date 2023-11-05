@@ -63,7 +63,7 @@ const Marketplace = () => {
         </div> */}
 
         {/* NFTs trending card */}
-        {/* <div className="z-20 grid grid-cols-1 gap-5 md:grid-cols-3">
+         {/* <div className="z-20 grid grid-cols-1 gap-5 md:grid-cols-3">
           <NftCard
             bidders={[avatar1, avatar2, avatar3]}
             title="Abstract Colors"
@@ -85,7 +85,7 @@ const Marketplace = () => {
             price="2.91"
             image={NFt4}
           />
-        </div> */}
+        </div>  */}
 
         {/* Recenlty Added setion */}
         {/* <div className="mb-5 mt-5 flex items-center justify-between px-[26px]">
@@ -121,15 +121,20 @@ const Marketplace = () => {
       </div>
 
       {/* right side section */}
+      
+        <div className="col-span-1 h-full w-full rounded-xl 2xl:col-span-3">
+        <a href="/admin/default/">
+      <TopCreatorTable
+        extra="mb-5"
+        tableData={tableDataTopCreators}
+        columnsData={tableColumnsTopCreators}
+       
+      />
+       </a>
+      {/* <HistoryCard /> */}
+    </div>
+  
 
-      <div className="col-span-1 h-full w-full rounded-xl 2xl:col-span-3">
-        <TopCreatorTable
-          extra="mb-5"
-          tableData={tableDataTopCreators}
-          columnsData={tableColumnsTopCreators}
-        />
-        <HistoryCard />
-      </div>
     </div>
   );
 };
