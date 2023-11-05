@@ -37,7 +37,7 @@ export default function Footer() {
         <li>
           <a
             target="blank"
-            href="https://blog.horizon-ui.com/"
+            //href="https://blog.horizon-ui.com/"
             className="text-sm text-gray-600 hover:text-gray-600 md:text-base lg:text-white lg:hover:text-white"
           >
             Blog
