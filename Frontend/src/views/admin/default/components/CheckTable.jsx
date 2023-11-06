@@ -104,16 +104,26 @@ const CheckTable = (props) => {
                       );
                     } else if (cell.column.Header === "SENTIMENT") {
                       data = (
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">
-                          {cell.value}
+                        <p
+                      className={`text-sm font-bold ${
+                      cell.value === "positive"
+                        ? 'text-green-500'
+                        : cell.value === "neutral"
+                        ? 'text-blue-400'
+                        : 'text-red-500'
+                          } dark:text-white`}
+                         >
+                                {cell.value.charAt(0).toUpperCase() + cell.value.slice(1)}
                         </p>
+
+
                       );
                     }
                     else if (cell.column.Header === "SCORES") {
                       data = (
-                        <p className="text-sm font-bold text-navy-700 dark:text-white">
+                        <p className="text-sm font-bold text-navy-300 dark:text-white">
                           
-                          <Progress width="w-16" value={cell.value} />
+                          <Progress width="w-16" value={(cell.value)*100} />
                           
                         
                         </p>
