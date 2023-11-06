@@ -1,21 +1,21 @@
 [
   {
     "name": "Reliance",
-    "symbol": "RELI",
+    "symbol": "RELIANCE",
     "quantity": 80,
     "link":"/stocks/reliance"
     
   },
   {
     "name": "HDFC",
-    "symbol": "HBBK",
+    "symbol": "HDFCBANK",
     "quantity": 50,
     "link":"/stocks/hdfc"
 
   },
   {
     "name":"Axis",
-    "symbol": "AXBK",
+    "symbol": "AXISBANK",
     "quantity": 70,
     "link":"/stocks/axis"
 
@@ -23,14 +23,14 @@
   },
   {
     "name":"ICICI",
-    "symbol": "ICB",
+    "symbol": "ICICIBANK",
     "quantity": 60,
     "link":"/stocks/icici"
 
   },
   {
     "name":"Kotak",
-    "symbol": "KTKM",
+    "symbol": "KOTAKBANK",
     "quantity": 78,
     "link":"/stocks/kotak"
   }

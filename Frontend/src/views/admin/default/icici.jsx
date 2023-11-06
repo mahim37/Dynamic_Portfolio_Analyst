@@ -123,17 +123,17 @@ const Icici = () => {
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Open"}
-          subtitle={"₹340.5"}
+          subtitle={"₹928.55"}
         />  
         <Widget
           icon={<IoDocuments className="h-6 w-6" />}
           title={"Close"}
-          subtitle={"₹642.39"}
+          subtitle={"₹933.80"}
         />
          <Widget
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Volume"}
-          subtitle={"574"}
+          subtitle={"71,46,961"}
         />
         {/*
         <Widget

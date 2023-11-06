@@ -123,17 +123,17 @@ const Kotak = () => {
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Open"}
-          subtitle={"₹340.5"}
+          subtitle={"₹1,740.00"}
         />  
         <Widget
           icon={<IoDocuments className="h-6 w-6" />}
           title={"Close"}
-          subtitle={"₹642.39"}
+          subtitle={"₹1,733.25"}
         />
          <Widget
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Volume"}
-          subtitle={"574"}
+          subtitle={"15,58,958"}
         />
         {/*
         <Widget

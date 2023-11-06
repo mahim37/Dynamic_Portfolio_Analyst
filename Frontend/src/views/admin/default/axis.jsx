@@ -123,17 +123,17 @@ const Axis = () => {
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Open"}
-          subtitle={"₹340.5"}
+          subtitle={"₹986.00"}
         />  
         <Widget
           icon={<IoDocuments className="h-6 w-6" />}
           title={"Close"}
-          subtitle={"₹642.39"}
+          subtitle={"₹988.85"}
         />
          <Widget
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Volume"}
-          subtitle={"574"}
+          subtitle={"42,68,048"}
         />
         {/*
         <Widget

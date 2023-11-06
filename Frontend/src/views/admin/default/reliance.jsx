@@ -123,17 +123,17 @@ const Reliance = () => {
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Open"}
-          subtitle={"₹340.5"}
+          subtitle={"₹2,327.20"}
         />  
         <Widget
           icon={<IoDocuments className="h-6 w-6" />}
           title={"Close"}
-          subtitle={"₹642.39"}
+          subtitle={"₹2,319.70"}
         />
          <Widget
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Volume"}
-          subtitle={"574"}
+          subtitle={"44,25,078"}
         />
         {/*
         <Widget
