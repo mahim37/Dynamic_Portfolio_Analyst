@@ -155,7 +155,7 @@ const Icici = () => {
             to="#"
             className="font-bold capitalize hover:text-navy-700 dark:hover:text-white"
           >
-            AXIS BANK
+            ICICI BANK
             {/* {brandText} */}
           </Link>
         </p>

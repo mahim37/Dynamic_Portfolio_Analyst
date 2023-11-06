@@ -154,7 +154,7 @@ const Reliance = () => {
             to="#"
             className="font-bold capitalize hover:text-navy-700 dark:hover:text-white"
           >
-            AXIS BANK
+            RELIANCE
             {/* {brandText} */}
           </Link>
         </p>

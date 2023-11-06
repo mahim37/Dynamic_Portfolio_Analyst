@@ -154,7 +154,7 @@ const Kotak = () => {
             to="#"
             className="font-bold capitalize hover:text-navy-700 dark:hover:text-white"
           >
-            AXIS BANK
+            KOTAK BANK
             {/* {brandText} */}
           </Link>
         </p>
