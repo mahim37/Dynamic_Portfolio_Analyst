@@ -46,7 +46,7 @@ const Icici = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/predict/reliance', {
+        const response = await fetch('http://localhost:5000/predict/icici', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const Icici = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/find', {
+        const response = await fetch('http://localhost:5000/history/icici', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -347,10 +347,34 @@ const Icici = () => {
       </div>
 
       {/* Charts */}
-
-      <div className="mt-5 grid grid-cols-1 gap-5 md:grid-cols-2">
-        <TotalSpent />
-        <WeeklyRevenue />
+      <div className="mt-5 grid grid-cols-3 gap-5 md:grid-cols-1">
+      <Plot data={[{
+            type: 'scatter',
+            mode:'lines',
+            x: tableData.map((dataPoint) => dataPoint.Date),
+            y: tableData.map((dataPoint) => dataPoint.Open),
+            // open: tableData.map((dataPoint) => dataPoint.Open),
+            // high: tableData.map((dataPoint) => dataPoint.High),
+            // low: tableData.map((dataPoint) => dataPoint.Low),
+            // close: tableData.map((dataPoint) => dataPoint.Close),
+          },
+        ]}
+        layout={{
+          title: 'Price Chart',
+          xaxis: {
+            title: 'Date',
+            // fixedrange: 'true'
+            // type: 'category', // Display dates as categories
+          },
+          yaxis: {
+            title: 'Price',
+            tickprefix: '₹', // Add a dollar sign prefix to tick values
+            // fixedrange: true, // Disable zooming on the y-axis
+          },
+          dragmode: 'pan', // Enable panning
+        }}
+      config={{ displayModeBar: false }} // Hide the display mode bar
+    />
       </div>
 
       {/* Tables & Charts */}
@@ -364,40 +388,9 @@ const Icici = () => {
           />
         </div>
 
-        <div className="mt-5 grid grid-cols-3 gap-5 xl:grid-cols-1">
+        <div className="mt-5 grid grid-cols-3 gap-5 md:grid-cols-1">
         {/* Check Table */}
-        <div>
-          <Plot data={[{
-            type: 'candlestick',
-            x: tableData.map((dataPoint) => dataPoint.Date),
-            open: tableData.map((dataPoint) => dataPoint.Open),
-            high: tableData.map((dataPoint) => dataPoint.High),
-            low: tableData.map((dataPoint) => dataPoint.Low),
-            close: tableData.map((dataPoint) => dataPoint.Close),
-            increasing: { line: { color: 'green' } },
-            decreasing: { line: { color: 'red' } },
-          },
-        ]}
-        layout={{
-          title: 'Candlestick Chart',
-          xaxis: {
-            title: 'Date',
-            // fixedrange: 'true's
-            // type: 'category', // Display dates as categories
-          },
-          yaxis: {
-            title: 'Price',
-            tickprefix: '$', // Add a dollar sign prefix to tick values
-            // fixedrange: true, // Disable zooming on the y-axis
-          },
-          dragmode: 'pan', // Enable panning
-        }}
-        config={{ displayModeBar: false }} // Hide the display mode bar
-      />
-
-        </div>
-        </div>
-        <div>
+        
         <Plot data={[{
             type: 'scatter',
             mode:'lines',
@@ -410,7 +403,7 @@ const Icici = () => {
           },
         ]}
         layout={{
-          title: 'Price Chart',
+          title: 'Prediction Chart',
           xaxis: {
             title: 'Date',
             // fixedrange: 'true's
@@ -425,7 +418,51 @@ const Icici = () => {
         }}
       config={{ displayModeBar: false }} // Hide the display mode bar
     />
-        </div>
+    </div>
+          
+          
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
+  <div className="rounded-lg">
+    <Plot
+      data={[
+        {
+          type: 'candlestick',
+          x: tableData.map((dataPoint) => dataPoint.Date),
+          open: tableData.map((dataPoint) => dataPoint.Open),
+          high: tableData.map((dataPoint) => dataPoint.High),
+          low: tableData.map((dataPoint) => dataPoint.Low),
+          close: tableData.map((dataPoint) => dataPoint.Close),
+          increasing: { line: { color: 'green' } },
+          decreasing: { line: { color: 'red' } },
+        },
+      ]}
+      layout={{
+        title: 'Candlestick Chart',
+        xaxis: {
+          title: 'Date',
+          // fixedrange: true
+          // type: 'category', // Display dates as categories
+        },
+        yaxis: {
+          title: 'Price',
+          tickprefix: '$', // Add a dollar sign prefix to tick values
+          // fixedrange: true, // Disable zooming on the y-axis
+        },
+        dragmode: 'pan', // Enable panning
+      }}
+      config={{ displayModeBar: false }} // Hide the display mode bar
+    />
+  </div>
+
+  <div className="rounded-lg">
+    <div className="md:grid md:grid-cols-3 md:gap-5">
+      <MiniCalendar />
+    </div>
+  </div>
+</div>
+
+        
+        
         {/* Traffic chart & Pie Chart */}
 
         {/* <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
@@ -434,20 +471,15 @@ const Icici = () => {
         </div> */}
 
         {/* Complex Table , Task & Calendar */}
-
-        {/* <ComplexTable
+{/* 
+        <ComplexTable
           columnsData={columnsDataComplex}
           tableData={tableDataComplex}
         /> */}
 
         {/* Task chart & Calendar */}
 
-        <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          {/* <TaskCard /> */}
-          <div className="grid grid-cols-1 rounded-[20px]">
-            <MiniCalendar />
-          </div>
-        </div>
+
       </div>
     </div>
   );

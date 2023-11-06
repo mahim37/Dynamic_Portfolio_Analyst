@@ -29,7 +29,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/find', {
+        const response = await fetch('http://localhost:5000/history_icici', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

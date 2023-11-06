@@ -20,19 +20,80 @@ def home():
     return {"message": "Hello from backend"}
 
 
-@app.route('/find', methods=['GET'])
-def find():
+@app.route('/history/reliance', methods=['GET'])
+def history_reliance():
     try:
-        df = pd.read_csv('reliance_stock_history.csv')
+        df = yf.Ticker("RELIANCE.NS").history(period='3y').reset_index()
+        df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
+        df.to_csv('stock_history/history_reliance.csv', index=False)
+
         json_objects = []
         for index, row in df.iterrows():
             entry_json = row.to_dict()
             json_objects.append(entry_json)
         return jsonify(json_objects)
-        data_dict = dict()
-        for col in df.columns:
-            data_dict[col] = df[col].values.tolist()
-        return jsonify(data_dict)
+    except OSError:
+        print('No file')
+
+
+@app.route('/history/hdfc', methods=['GET'])
+def history_hdfc():
+    try:
+        df = yf.Ticker("HDFCBANK.NS").history(period='3y').reset_index()
+        df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
+        df.to_csv('stock_history/history_hdfc.csv', index=False)
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+    except OSError:
+        print('No file')
+
+
+@app.route('/history/icici', methods=['GET'])
+def history_icici():
+    try:
+        df = yf.Ticker("ICICIBANK.NS").history(period='3y').reset_index()
+        df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
+        df.to_csv('stock_history/history_icici.csv', index=False)
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+    except OSError:
+        print('No file')
+
+
+@app.route('/history/kotak', methods=['GET'])
+def history_kotak():
+    try:
+        df = yf.Ticker("KOTAKBANK.NS").history(period='3y').reset_index()
+        df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
+        df.to_csv('stock_history/history_kotak.csv', index=False)
+
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
+    except OSError:
+        print('No file')
+
+
+@app.route('/history/axis', methods=['GET'])
+def history_axis():
+    try:
+        df = yf.Ticker("AXISBANK.NS").history(period='3y').reset_index()
+        df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
+        df.to_csv('stock_history/history_axis.csv', index=False)
+
+        json_objects = []
+        for index, row in df.iterrows():
+            entry_json = row.to_dict()
+            json_objects.append(entry_json)
+        return jsonify(json_objects)
     except OSError:
         print('No file')
 
