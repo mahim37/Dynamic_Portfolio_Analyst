@@ -35,13 +35,13 @@ python3 app.py
 
 5. Running frontend server:
   Open new terminal in the project root directory
-   ```bash
-    cd Frontend/
-   ```
+```bash
+  cd Frontend/
+ ```
 6. Install the dependencies
-   ```bash
-   npm install
-   ```
+```bash
+ npm install
+```
 7. Finally, run frontend by default on `localhost:3000`
 ```bash
 npm start
