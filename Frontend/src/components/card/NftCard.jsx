@@ -6,7 +6,7 @@ const NftCard = ({ title, author, price, image, bidders, extra }) => {
   const [heart, setHeart] = useState(true);
   return (
     <Card
-      extra={`flex flex-col w-full h-full !p-4 3xl:p-![18px] bg-white ${extra}`}
+      extra={`flex flex-col w-full h-full !p-4 3xl:p-![18px] bg-white ${extra} `}
     >
       <div className="h-full w-full">
         <div className="relative w-full">

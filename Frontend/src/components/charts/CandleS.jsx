@@ -4,7 +4,9 @@ import Plot from 'react-plotly.js';
 const CandlestickChart = ({ chartData }) => {
   return (
     <div>
-      <Plot data={chartData} />
+      <Plot data={chartData} 
+            
+      />
     </div>
   );
 };

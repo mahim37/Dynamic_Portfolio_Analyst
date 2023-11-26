@@ -101,8 +101,9 @@ def history_axis():
 @app.route('/sentiment/reliance', methods=['GET'])
 def reliance():
     try:
-        df = pd.read_csv('reliance_sentiment.csv')
+        df = pd.read_csv('sentiment_outputs/reliance_sentiment.csv')
         json_objects = []
+        print(df.head())
         for index, row in df.iterrows():
             entry_json = row.to_dict()
             json_objects.append(entry_json)

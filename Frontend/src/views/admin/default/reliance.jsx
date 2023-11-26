@@ -306,7 +306,7 @@ const Reliance = () => {
       </div>
     </nav>
 
-      <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6">
+      <div className="mt-3 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-6 ">
         <Widget
           icon={<MdBarChart className="h-7 w-7" />}
           title={"Open"}
@@ -347,7 +347,7 @@ const Reliance = () => {
 
       {/* Charts */}
 
-      <div className="mt-5 grid grid-cols-3 gap-5 md:grid-cols-1">
+      <div className="mt-5 grid grid-cols-3 gap-5 md:grid-cols-1 ">
       <Plot data={[{
             type: 'scatter',
             mode:'lines',
@@ -379,7 +379,7 @@ const Reliance = () => {
 
       {/* Tables & Charts */}
 
-      <div className="mt-5 grid grid-cols-3 gap-5 xl:grid-cols-1">
+      <div className="mt-5 grid grid-cols-3 gap-5 xl:grid-cols-1 ">
         {/* Check Table */}
         <div>
           <CheckTable
@@ -388,7 +388,7 @@ const Reliance = () => {
           />
         </div>
 
-        <div className="mt-5 grid grid-cols-3 gap-5 md:grid-cols-1">
+        <div className="mt-5 grid grid-cols-3 gap-5 md:grid-cols-1 ">
         {/* Check Table */}
         
         <Plot data={[{
