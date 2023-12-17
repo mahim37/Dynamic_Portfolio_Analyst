@@ -1,16 +1,13 @@
-import json
-
 import pandas as pd
-import tensorflow as tf
-import keras
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import numpy as np
 from keras.models import load_model
 from datetime import datetime, timedelta
 import yfinance as yf
-from flask_jsonpify import jsonpify
+
 # instantiate flask
+
 app = Flask(__name__)
 CORS(app, resources={r"/*": {"origins": "http://localhost:3000"}})
 
@@ -260,7 +257,7 @@ def predict():
     scaled_data = scaler.fit_transform(dataset)
     X_test = []
     Y_test = df['Close']
-    print(scaled_data.shape)
+    # print(scaled_data.shape)
     for i in range(0, len(scaled_data)):
         X_test.append(scaled_data[i - 60:i, 0])
 
@@ -273,7 +270,7 @@ def predict():
     loaded_model = load_model('lstm_model.keras')
     # Get the models predicted price values
     predictions = loaded_model.predict(X_test)
-    print(predictions.tolist())
+    # print(predictions.tolist())
     # return {"message": 'He'}
 
     return predictions.tolist()
