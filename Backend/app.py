@@ -9,7 +9,8 @@ import yfinance as yf
 # instantiate flask
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "https://dportfolio-analyst.netlify.app/"}})
+# CORS(app, resources={r"/*": {"origins": "https://dportfolio-analyst.netlify.app/"}})
+CORS(app, resources={r"/*": {"origins": "*"}})
 
 
 @app.route('/')
