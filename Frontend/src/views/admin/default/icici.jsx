@@ -46,7 +46,7 @@ const Icici = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://13.201.92.248/predict/icici', {
+        const response = await fetch('https://13.201.92.248/predict/icici', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const Icici = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://13.201.92.248/history/icici', {
+        const response = await fetch('https://13.201.92.248/history/icici', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ const Icici = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://13.201.92.248/sentiment/icici', {
+        const response = await fetch('https://13.201.92.248/sentiment/icici', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

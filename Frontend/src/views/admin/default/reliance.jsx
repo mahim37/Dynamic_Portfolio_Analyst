@@ -46,7 +46,7 @@ const Reliance = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://13.201.92.248/history/reliance', {
+        const response = await fetch('https://13.201.92.248/history/reliance', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const Reliance = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://13.201.92.248/sentiment/reliance', {
+        const response = await fetch('https://13.201.92.248/sentiment/reliance', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ const Reliance = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('http://13.201.92.248/predict/reliance', {
+        const response = await fetch('https://13.201.92.248/predict/reliance', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
