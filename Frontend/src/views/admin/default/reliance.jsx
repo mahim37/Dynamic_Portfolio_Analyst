@@ -46,7 +46,7 @@ const Reliance = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/history/reliance', {
+        const response = await fetch('http://127.0.0.1:5000/history/reliance', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const Reliance = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/sentiment/reliance', {
+        const response = await fetch('http://127.0.0.1:5000/sentiment/reliance', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ const Reliance = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/predict/reliance', {
+        const response = await fetch('http://127.0.0.1:5000/predict/reliance', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -421,8 +421,8 @@ const Reliance = () => {
     </div>
           
           
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-5">
-  <div className="rounded-lg">
+    <div className="w-full">
+  <div className="rounded-lg w-full">
     <Plot
       data={[
         {
@@ -438,46 +438,31 @@ const Reliance = () => {
       ]}
       layout={{
         title: 'Candlestick Chart',
+        width: window.innerWidth * 1, // Optional: Adjust width slightly for padding
+        height: 600, // Adjust the height as needed
         xaxis: {
           title: 'Date',
-          // fixedrange: true
-          // type: 'category', // Display dates as categories
         },
         yaxis: {
           title: 'Price',
-          tickprefix: '$', // Add a dollar sign prefix to tick values
-          // fixedrange: true, // Disable zooming on the y-axis
+          tickprefix: '₹',
         },
-        dragmode: 'pan', // Enable panning
+        dragmode: 'pan',
       }}
-      config={{ displayModeBar: false }} // Hide the display mode bar
+      config={{ displayModeBar: false }}
     />
   </div>
 
-  <div className="rounded-lg">
+
+  
+
+  {/* <div className="rounded-lg">
     <div className="md:grid md:grid-cols-3 md:gap-5">
       <MiniCalendar />
     </div>
-  </div>
+  </div> */}
 </div>
 
-        
-        
-        {/* Traffic chart & Pie Chart */}
-
-        {/* <div className="grid grid-cols-1 gap-5 rounded-[20px] md:grid-cols-2">
-          <DailyTraffic />
-          <PieChartCard />
-        </div> */}
-
-        {/* Complex Table , Task & Calendar */}
-{/* 
-        <ComplexTable
-          columnsData={columnsDataComplex}
-          tableData={tableDataComplex}
-        /> */}
-
-        {/* Task chart & Calendar */}
 
 
       </div>

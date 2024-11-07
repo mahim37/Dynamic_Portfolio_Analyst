@@ -9,6 +9,7 @@ import {
   useSortBy,
   useTable,
 } from "react-table";
+import { useEffect } from "react";
 
 const CheckTable = (props) => {
   const { columnsData, tableData } = props;
@@ -24,6 +25,10 @@ const CheckTable = (props) => {
     useSortBy,
     usePagination
   );
+  useEffect(() => {
+    console.log("Table Data:", tableData);
+  }, [tableData]);
+  
 
   const {
     getTableProps,
@@ -87,7 +92,9 @@ const CheckTable = (props) => {
                           </p>
                         </div>
                       );
-                    } else if (cell.column.Header === "HEADLINES") {
+                    } else if (cell.column.Header === "HEADLINE") {
+                      // console.log(cell);
+
                       data = (
                         <div className="flex items-center">
                           <p className="text-sm font-bold text-navy-700 dark:text-white">

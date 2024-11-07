@@ -46,7 +46,7 @@ const Kotak = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/predict/kotak', {
+        const response = await fetch('http://127.0.0.1:5000/predict/kotak', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const Kotak = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/history/kotak', {
+        const response = await fetch('http://127.0.0.1:5000/history/kotak', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ const Kotak = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/sentiment/kotak', {
+        const response = await fetch('http://127.0.0.1:5000/sentiment/kotak', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

@@ -45,7 +45,7 @@ const Axis = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/predict/axis', {
+        const response = await fetch('http://127.0.0.1:5000/predict/axis', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -74,7 +74,7 @@ const Axis = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/history/axis', {
+        const response = await fetch('http://127.0.0.1:5000/history/axis', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ const Axis = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/sentiment/axis', {
+        const response = await fetch('http://127.0.0.1:5000/sentiment/axis', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

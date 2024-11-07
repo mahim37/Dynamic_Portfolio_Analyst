@@ -23,8 +23,8 @@ export const columnsDataCheck = [
     accessor: "Date",
   },
   {
-    Header: "HEADLINES",
-    accessor: "Headlines",
+    Header: "HEADLINE",
+    accessor: "Headline",
   },
   {
     Header: "DESCRIPTION",

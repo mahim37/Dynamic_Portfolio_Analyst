@@ -46,7 +46,7 @@ const Hdfc = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/predict/hdfc', {
+        const response = await fetch('http://127.0.0.1:5000/predict/hdfc', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -75,7 +75,7 @@ const Hdfc = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/history/hdfc', {
+        const response = await fetch('http://127.0.0.1:5000/history/hdfc', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',
@@ -104,7 +104,7 @@ const Hdfc = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch('https://13.201.92.248/sentiment/hdfc', {
+        const response = await fetch('http://127.0.0.1:5000/sentiment/hdfc', {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

@@ -21,7 +21,7 @@ def home():
 @app.route('/history/reliance', methods=['GET'])
 def history_reliance():
     try:
-        df = yf.Ticker("RELIANCE.NS").history(period='3y').reset_index()
+        df = yf.Ticker("RELIANCE.NS").history(period='1y').reset_index()
         df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
         df.to_csv('stock_history/history_reliance.csv', index=False)
 
@@ -37,7 +37,7 @@ def history_reliance():
 @app.route('/history/hdfc', methods=['GET'])
 def history_hdfc():
     try:
-        df = yf.Ticker("HDFCBANK.NS").history(period='3y').reset_index()
+        df = yf.Ticker("HDFCBANK.NS").history(period='1y').reset_index()
         df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
         df.to_csv('stock_history/history_hdfc.csv', index=False)
         json_objects = []
@@ -52,7 +52,7 @@ def history_hdfc():
 @app.route('/history/icici', methods=['GET'])
 def history_icici():
     try:
-        df = yf.Ticker("ICICIBANK.NS").history(period='3y').reset_index()
+        df = yf.Ticker("ICICIBANK.NS").history(period='1y').reset_index()
         df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
         df.to_csv('stock_history/history_icici.csv', index=False)
         json_objects = []
@@ -67,7 +67,7 @@ def history_icici():
 @app.route('/history/kotak', methods=['GET'])
 def history_kotak():
     try:
-        df = yf.Ticker("KOTAKBANK.NS").history(period='3y').reset_index()
+        df = yf.Ticker("KOTAKBANK.NS").history(period='1y').reset_index()
         df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
         df.to_csv('stock_history/history_kotak.csv', index=False)
 
@@ -83,7 +83,7 @@ def history_kotak():
 @app.route('/history/axis', methods=['GET'])
 def history_axis():
     try:
-        df = yf.Ticker("AXISBANK.NS").history(period='3y').reset_index()
+        df = yf.Ticker("AXISBANK.NS").history(period='1y').reset_index()
         df['Date'] = pd.to_datetime(df['Date']).dt.strftime('%Y-%m-%d')
         df.to_csv('stock_history/history_axis.csv', index=False)
 
@@ -99,7 +99,7 @@ def history_axis():
 @app.route('/sentiment/reliance', methods=['GET'])
 def reliance():
     try:
-        df = pd.read_csv('sentiment_outputs/reliance_sentiment.csv')
+        df = pd.read_csv('sentiment_outputs/reliance.csv')
         json_objects = []
         print(df.head())
         for index, row in df.iterrows():
@@ -114,7 +114,7 @@ def reliance():
 @app.route('/sentiment/kotak', methods=['GET'])
 def kotak():
     try:
-        df = pd.read_csv('sentiment_outputs/kotak_sentiment.csv')
+        df = pd.read_csv('c')
         json_objects = []
         for index, row in df.iterrows():
             entry_json = row.to_dict()
@@ -128,7 +128,7 @@ def kotak():
 @app.route('/sentiment/icici', methods=['GET'])
 def icici():
     try:
-        df = pd.read_csv('sentiment_outputs/icici_sentiment.csv')
+        df = pd.read_csv('sentiment_outputs/icici.csv')
         json_objects = []
         for index, row in df.iterrows():
             entry_json = row.to_dict()
@@ -156,7 +156,7 @@ def axis():
 @app.route('/sentiment/hdfc', methods=['GET'])
 def hdfc():
     try:
-        df = pd.read_csv('sentiment_outputs/hdfc_sentiment.csv')
+        df = pd.read_csv('sentiment_outputs/hdfc.csv')
         json_objects = []
         for index, row in df.iterrows():
             entry_json = row.to_dict()
